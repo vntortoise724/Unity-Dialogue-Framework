@@ -1,4 +1,4 @@
-using RPG.Dialogue;
+using Thesis.Dialogue;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

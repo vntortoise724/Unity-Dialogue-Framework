@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 
-namespace RPG.Dialogue.Editor
+namespace Thesis.Dialogue.Editor
 {
     public class DialogueModificationProcessor : UnityEditor.AssetModificationProcessor
     {

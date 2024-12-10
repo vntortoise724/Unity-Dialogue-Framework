@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace RPG.Dialogue
+namespace Thesis.Dialogue
 {
     public class DialogueNode : ScriptableObject
     {

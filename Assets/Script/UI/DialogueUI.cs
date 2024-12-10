@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Dialogue;
+using Thesis.Dialogue;
 using TMPro;
 using UnityEngine.UI;
 
-namespace RPG.UI
+namespace Thesis.UI
 {
     public class DialogueUI : MonoBehaviour
     {
@@ -22,7 +22,7 @@ namespace RPG.UI
         void Start()
         {
             playerConversant = GameObject.Find("Player").GetComponent<PlayerConversant>();
-            playerConversant.onConversationUpdated += UpdateUI;
+            playerConversant.OnConversationUpdated += UpdateUI;
             nextBtn.onClick.AddListener(() => playerConversant.Next());
             quitBtn.onClick.AddListener(() => playerConversant.Quit());
 

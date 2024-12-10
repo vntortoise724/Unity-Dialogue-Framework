@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-namespace RPG.Dialogue.Editor
+namespace Thesis.Dialogue.Editor
 {
     public class DialogueEditor : EditorWindow
     {

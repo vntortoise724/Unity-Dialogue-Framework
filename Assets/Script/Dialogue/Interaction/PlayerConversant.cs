@@ -1,4 +1,4 @@
-using RPG.Dialogue;
+using Thesis.Dialogue;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,15 +11,8 @@ public class PlayerConversant : MonoBehaviour
     private Dialogue currentDialogue;
     private DialogueNode currentNode = null;
     private AIConversant currentNPC = null;
-    private Enemy enemy; 
     private bool isChoosing = false;
-
-    public event Action onConversationUpdated;
-
-    private void Awake()
-    {
-        enemy =  GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
-    }
+    public event Action OnConversationUpdated;
 
     public void StartDialogue(AIConversant _conversant, Dialogue _dialogue)
     {
@@ -27,18 +20,17 @@ public class PlayerConversant : MonoBehaviour
         currentDialogue = _dialogue;
         currentNode = currentDialogue.GetRootNode();
         TriggerEnterAction();
-        onConversationUpdated();
+        OnConversationUpdated();
     }
 
     public void Quit()
     {
         currentDialogue = null;
-        enemy.SetNoTalk();
         TriggerExitAction();
         currentNode = null;
         isChoosing = false;
         currentNPC = null;
-        onConversationUpdated();
+        OnConversationUpdated();
     }
 
     public bool IsActive()
@@ -87,7 +79,7 @@ public class PlayerConversant : MonoBehaviour
         {
             isChoosing = true;
             TriggerExitAction();
-            onConversationUpdated();
+            OnConversationUpdated();
             return;
         }
 
@@ -96,7 +88,7 @@ public class PlayerConversant : MonoBehaviour
         TriggerExitAction();
         currentNode = children[randomIndex];
         TriggerEnterAction();
-        onConversationUpdated();
+        OnConversationUpdated();
     }
 
     public bool HasNext()
